@@ -3,16 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Form</title>
+    <title>Add new message</title>
+    <link rel="stylesheet" href="./styles/form.css" />
   </head>
   <body>
-    <h1>Form</h1>
     <form method="POST" action="/new">
+      <h1>Add new message</h1>
       <label for="authorName">Author name:</label>
-      <input type="text" id="authorName" name="authorName" />
+      <input type="text" id="authorName" name="authorName" required />
       <label for="messageText">Message:</label>
-      <textarea name="messageText" id="messageText"></textarea>
-      <button type="submit">Submit</button>
+      <textarea
+        name="messageText"
+        id="messageText"
+        minlength="1"
+        maxlength="300"
+        required
+      ></textarea>
+      <button type="submit">Add</button>
     </form>
   </body>
 </html>

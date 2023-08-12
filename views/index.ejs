@@ -4,30 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
-    <style>
-      a {
-        color: orangered;
-        background-color: black;
-        text-decoration: none;
-        padding: 8px 16px;
-        border-radius: 8px;
-      }
-      .message-box {
-        background-color: cyan;
-        margin: 16px;
-        border-radius: 8px;
-        font-size: 1.3rem;
-      }
-    </style>
   </head>
+  <link rel="stylesheet" href="./styles/index.css" />
   <body>
-    <a href="/new">Create new</a>
-    <% messages.forEach((message) => { %>
-    <div class="message-box">
-      <p>Message: <%= message.text %></p>
-      <p>User: <%= message.user %></p>
-      <p>Date: <%= message.added %></p>
-    </div>
-    <% }); %>
+    <main>
+      <section class="messages-container">
+        <h1>Messages</h1>
+        <% messages.forEach((message) => { %>
+        <div class="message-box">
+          <div class="author-date-container">
+            <p class="author-name"><%= message.user %></p>
+            <p class="message-date"><%= message.added %></p>
+          </div>
+          <p class="message-text"><%= message.text %></p>
+          <div class="animated-border-bottom"></div>
+        </div>
+        <% }); %>
+        <a href="/new">Add new message</a>
+      </section>
+    </main>
   </body>
 </html>
